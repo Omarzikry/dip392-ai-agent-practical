@@ -7,6 +7,7 @@ Usage:
 
 import argparse
 import sys
+from typing import Optional
 
 from .agent import StudyAssistantAgent, AgentResponse
 
@@ -50,7 +51,7 @@ def format_response(response: AgentResponse, verbose: bool = False) -> str:
     return "\n".join(lines)
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv: Optional[list] = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
 
